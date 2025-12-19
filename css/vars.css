@@ -1,0 +1,23 @@
+/* ====== Color Palette (defaults) ====== */
+:root {
+  --color-primary: #97bfff;     
+  --color-secondary: #b9d6ff;   
+  --color-accent: #6a8cc7;      
+  --color-dark: #1e2a3a;
+  --color-text: #2d2d2d;
+  --color-bg: #e1eeff;
+
+  --max-width: 900px;
+  --radius-lg: 12px;
+  --radius-sm: 6px;
+}
+
+/* Dark mode variables when .dark-mode is present on <html> */
+.dark-mode {
+  --color-primary: #111620;
+  --color-secondary: #1f2a3a;
+  --color-accent: #6198ff;
+  --color-dark: #f5f7fb;
+  --color-text: #e6eefc;
+  --color-bg: #0f1621;
+}

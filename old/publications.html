@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Publication Filter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .filters-container {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .category-btn {
+      position: relative;
+      padding: 6px 20px 6px 12px; /* extra right padding for '×' */
+      border-radius: 20px;
+      border: 1px solid #007bff;
+      background-color: white;
+      color: #007bff;
+      cursor: pointer;
+      transition: background-color 0.2s, color 0.2s;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .category-btn.active {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .category-btn::after {
+      content: '×';
+      opacity: 0;
+      position: absolute;
+      right: 8px;
+      font-weight: bold;
+      pointer-events: none;
+      transition: opacity 0.2s;
+      color: white;
+    }
+
+    .category-btn.active:hover::after {
+      opacity: 1;
+    }
+
+    .clear-btn {
+      background: #dc3545;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .clear-btn:hover {
+      background: #b52a37;
+    }
+
+    input {
+      width: 300px;
+      padding: 8px;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .card {
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      margin: 0;
+    }
+
+    .card p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Publications</h1>
+
+  <div class="filters-container" id="categoryBar"></div>
+  <button class="clear-btn" id="clearBtn">Clear Filters</button>
+
+  <input type="text" id="keywordInput" placeholder="Filter by keyword..." />
+
+  <div id="cardsContainer"></div>
+
+  <script>
+    const publications = [
+      {
+        title: "Deep Learning in Medicine",
+        authors: "J. Smith, A. Doe",
+        abstract: "We explore deep learning applications in modern healthcare.",
+        year: 2023,
+        category: "AI"
+      },
+      {
+        title: "Quantum Computing Advances",
+        authors: "R. Wang, M. Patel",
+        abstract: "This paper investigates the use of quantum algorithms.",
+        year: 2024,
+        category: "Quantum"
+      },
+      {
+        title: "Ethics in AI Systems",
+        authors: "L. Chen",
+        abstract: "A survey on ethical concerns in artificial intelligence.",
+        year: 2022,
+        category: "AI"
+      },
+      {
+        title: "Climate Modeling with HPC",
+        authors: "K. Müller",
+        abstract: "Using high-performance computing to improve climate prediction.",
+        year: 2021,
+        category: "HPC"
+      }
+    ];
+
+    const keywordInput = document.getElementById("keywordInput");
+    const categoryBar = document.getElementById("categoryBar");
+    const clearBtn = document.getElementById("clearBtn");
+    const cardsContainer = document.getElementById("cardsContainer");
+
+    const originalCategories = [...new Set(publications.map(p => p.category))].sort();
+    const selectedCategories = [];
+
+    function renderCategoryButtons() {
+      categoryBar.innerHTML = '';
+
+      // Combine selected (in order of selection) + unselected (alphabetical)
+      const unselected = originalCategories.filter(c => !selectedCategories.includes(c));
+      const ordered = [...selectedCategories, ...unselected];
+
+      ordered.forEach(cat => {
+        const isActive = selectedCategories.includes(cat);
+        const btn = document.createElement("button");
+        btn.className = "category-btn";
+        if (isActive) btn.classList.add("active");
+        btn.textContent = cat;
+
+        btn.addEventListener("click", () => {
+          if (isActive) {
+            const idx = selectedCategories.indexOf(cat);
+            if (idx > -1) selectedCategories.splice(idx, 1);
+          } else {
+            selectedCategories.push(cat);
+          }
+          renderCategoryButtons();
+          applyFilters();
+        });
+
+        categoryBar.appendChild(btn);
+      });
+    }
+
+    function applyFilters() {
+      const keyword = keywordInput.value.toLowerCase();
+      const filtered = publications.filter(pub => {
+        const matchesCategory =
+          selectedCategories.length === 0 || selectedCategories.includes(pub.category);
+        const matchesKeyword =
+          pub.title.toLowerCase().includes(keyword) ||
+          pub.authors.toLowerCase().includes(keyword) ||
+          pub.abstract.toLowerCase().includes(keyword);
+        return matchesCategory && matchesKeyword;
+      });
+      renderCards(filtered);
+    }
+
+    function renderCards(data) {
+      cardsContainer.innerHTML = '';
+      if (data.length === 0) {
+        cardsContainer.innerHTML = '<p>No matching publications found.</p>';
+        return;
+      }
+
+      data.forEach(pub => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <h3>${pub.title} (${pub.year})</h3>
+          <p><strong>Authors:</strong> ${pub.authors}</p>
+          <p><strong>Category:</strong> ${pub.category}</p>
+          <p>${pub.abstract}</p>
+        `;
+        cardsContainer.appendChild(card);
+      });
+    }
+
+    clearBtn.addEventListener("click", () => {
+      selectedCategories.length = 0;
+      keywordInput.value = '';
+      renderCategoryButtons();
+      applyFilters();
+    });
+
+    keywordInput.addEventListener("input", applyFilters);
+
+    // Initial render
+    renderCategoryButtons();
+    renderCards(publications);
+  </script>
+
+</body>
+</html>

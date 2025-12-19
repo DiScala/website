@@ -1,0 +1,359 @@
+
+
+/* ===== Global Reset ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  line-height: 1.55;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Container / Wrapper ===== */
+.page-wrapper {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  flex: 1;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: var(--color-primary);
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--color-secondary);
+  z-index: 1000;
+  backdrop-filter: saturate(110%) blur(6px);
+}
+
+.nav-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Left group of links */
+.nav-left {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.nav-left a {
+  color: var(--color-dark);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.18s ease, color 0.18s ease, opacity 0.18s ease;
+  font-size: 0.95rem;
+}
+
+.nav-left a:hover {
+  background: rgba(0,0,0,0.04);
+  opacity: 0.9;
+}
+
+/* Ensure nav link colors respond to dark mode */
+.dark-mode .nav-left a {
+  color: var(--color-dark);
+}
+
+/* ===== Theme Toggle (pill + thumb + icons) ===== */
+.theme-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+  border-radius: 999px;
+}
+
+/* Track */
+.toggle-track {
+  width: 48px;
+  height: 24px;
+  background: var(--color-secondary);
+  border-radius: 999px;
+  position: relative;
+  padding: 2px;
+  transition: background-color 0.22s ease;
+  display: inline-block;
+}
+
+/* Thumb */
+.toggle-thumb {
+  width: 20px;
+  height: 20px;
+  background: var(--color-bg);
+  border-radius: 50%;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.22s cubic-bezier(.2,.9,.3,1), background 0.22s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* When dark-mode class exists on <html>, slide thumb to right */
+.dark-mode .toggle-thumb {
+  transform: translateX(24px);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.18);
+}
+
+/* SVG icons inside the thumb (stacked in same position) */
+.toggle-thumb svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 1.6;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.20s ease, stroke 0.22s ease, fill 0.22s ease;
+  fill: none;
+  stroke: var(--color-dark);
+}
+
+/* Default: show sun, hide moon */
+.icon-sun {
+  opacity: 1;
+}
+
+.icon-moon {
+  opacity: 0;
+}
+
+/* In dark mode: show moon, hide sun; adapt stroke color */
+.dark-mode .icon-sun {
+  opacity: 0;
+}
+
+.dark-mode .icon-moon {
+  opacity: 1;
+
+}
+
+/* Make sure svg strokes invert in dark mode when needed */
+.dark-mode .toggle-thumb svg {
+  stroke: var(--color-bg);
+}
+
+/* Slightly change track color in dark mode */
+.dark-mode .toggle-track {
+  background: rgba(255,255,255,0.08);
+}
+
+/* Hover states */
+.theme-toggle:hover .toggle-track {
+  filter: brightness(0.98);
+}
+
+/* ===== Landing Card (business-card look) ===== */
+.landing-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: var(--color-primary);
+  padding: 1.75rem;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 6px 20px rgba(20,30,45,0.04);
+  margin-bottom: 1.75rem;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.profile-image img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 3px solid var(--color-secondary);
+}
+
+.intro-text h1 {
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+  color: var(--color-dark);
+}
+
+.intro-text p {
+  color: var(--color-text);
+  max-width: 55ch;
+}
+
+/* ===== Quick Link Cards ===== */
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin: 1.75rem 0 2.5rem 0;
+}
+
+.card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-secondary);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(12,20,35,0.06);
+  border-color: var(--color-accent);
+}
+
+.card h3 {
+  margin-bottom: 0.45rem;
+  color: var(--color-dark);
+}
+
+.card p {
+  margin-bottom: 0.9rem;
+  color: var(--color-text);
+  font-size: 0.95rem;
+}
+
+.card a {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+
+
+/* ===== Content long / other sections ===== */
+.content-long {
+  margin-bottom: 3rem;
+}
+
+/* ===== Footer ===== */
+.footer {
+  width: 100%;
+  background: var(--color-primary);
+  padding: 1rem;
+  text-align: center;
+  border-top: 1px solid var(--color-secondary);
+  margin-top: 2.5rem;
+  transition: background 0.25s ease;
+  position: relative;
+}
+
+.footer p {
+  color: var(--color-dark);
+}
+
+.footer a {
+  margin-left: 0.8rem;
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Turtle now rests on the footer */
+.turtle {
+  position: absolute;
+  bottom: 100%;       /* positions turtle ABOVE the footer */
+  right: 40%;         /*  align to footer’s right edge */
+  width: 70px;
+  height: 70px;
+  /*transform: translateY(30px);  optional: overlap the edge slightly for “resting” look */
+  pointer-events: none;        /* turtle won’t block clicks */
+}
+
+.turtle-img {
+    width: 90px;        /* small image */
+    height: auto;
+    position: absolute; /* place it anywhere inside */
+    top: 50%;
+    left: 50%;
+    transform: translate(0%, -45%);
+}
+
+/* ===== Responsive tweaks ===== */
+@media (max-width: 700px) {
+  .landing-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-image img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .nav-left {
+    gap: 0.5rem;
+  }
+
+  .nav-left a {
+    font-size: 0.9rem;
+    padding: 0.25rem 0.35rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav-content {
+    padding: 0 0.6rem;
+  }
+}
+
+
+.nav-left a.active {
+  background: var(--color-accent);
+  color: var(--color-bg) !important;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.dark-mode .nav-left a.active {
+  background: var(--color-accent);
+  color: var(--color-bg) !important;
+}
+
+.nav-left a {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* SVG styling */
+.nav-left .icon {
+  width: 16px;
+  height: 16px;
+  stroke: var(--color-dark);
+  fill: none;
+  stroke-width: 1.8;
+  transition: stroke 0.25s ease;
+}
+
+/* Ensure good contrast in dark mode */
+.dark-mode .nav-left .icon {
+  stroke: var(--color-dark);
+}
+
+.no-theme-transition * {
+  transition: none !important;
+}

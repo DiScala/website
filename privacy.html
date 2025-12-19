@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Daan Di Scala - Portfolio</title>
+  <link rel="stylesheet" href="css/vars.css">
+  <link rel="stylesheet" href="css/styles.css">
+    <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark-mode');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+
+
+  <!-- NAVBAR ------------------------------------------------------------------------------------------------------------------>
+  <nav class="navbar">
+    <div class="nav-content">
+
+        <div class="nav-left">
+        <a href="index.html"><svg class="icon" viewBox="0 0 24 24"><path d="M3 9.5l9-7 9 7v11.5a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1V9.5z" /></svg></a>
+        <a href="projects.html">Projects</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="contact.html"><svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4V4zm8 7L4 6m16 0l-8 5" /></svg>Contact</a>
+        </div>
+
+
+        <!-- Theme Toggle Switch -->
+        <button class="theme-toggle" aria-label="Toggle Dark Mode">
+          <div class="toggle-track">
+            <div class="toggle-thumb">
+              <!-- Sun Icon -->
+              <svg class="icon-sun" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="4"></line>
+                <line x1="12" y1="20" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="6.34" y2="6.34"></line>
+                <line x1="17.66" y1="17.66" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="4" y2="12"></line>
+                <line x1="20" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="6.34" y2="17.66"></line>
+                <line x1="17.66" y1="6.34" x2="19.78" y2="4.22"></line>
+              </svg>
+
+              <!-- Moon Icon -->
+              <svg class="icon-moon" viewBox="0 0 24 24">
+                <path d="M21 12.79A9 9 0 0 1 11.21 3 
+                     7 7 0 1 0 21 12.79z" />
+              </svg>
+            </div>
+          </div>
+        </button>
+
+      </div>
+  </nav>
+  <!-- NAVBAR ------------------------------------------------------------------------------------------------------------------>
+
+  <main class="page-wrapper">
+
+    <!-- LONG CONTENT EXAMPLE -->
+    <section class="content-long">
+      <h2>Privacy Statement</h2>
+      <p>
+       This website does not track any cookies. <br>However, seeing as you are interested in privacy, check out <a href="publications.html?id=privacy">my paper(s) on privacy</a>!
+      </p>
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+    <p>© 2025 Daan Di Scala</p>
+    <a href="privacy.html">Privacy Statement</a>
+    <div class="content-wrapper">
+    <div class="turtle">
+       <img src="images/Festina.png" alt="Turtle" class="turtle-img">
+    </div></div>
+  </footer>
+
+  
+</body>
+
+<script>
+  const btn = document.querySelector('.theme-toggle');
+
+  btn.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark-mode');
+  });
+</script>
+
+  <script src="js/darkmode.js"></script>
+</html>

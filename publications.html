@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daan Di Scala - Publications</title>
+  <link rel="stylesheet" href="css/vars.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/publications.css">
+    <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark-mode');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+<!-- NAVBAR ------------------------------------------------------------------------------------------------------------------>
+  <nav class="navbar">
+  <div class="nav-content">
+
+        <div class="nav-left">
+        <a href="index.html"><svg class="icon" viewBox="0 0 24 24"><path d="M3 9.5l9-7 9 7v11.5a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1V9.5z" /></svg></a>
+        <a href="projects.html">Projects</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html" class="active">Publications</a>
+        <a href="contact.html"><svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4V4zm8 7L4 6m16 0l-8 5" /></svg>Contact</a>
+        </div>
+
+    <!-- Theme Toggle Switch -->
+    <button class="theme-toggle" aria-label="Toggle Dark Mode">
+      <div class="toggle-track">
+        <div class="toggle-thumb">
+          <!-- Sun Icon -->
+          <svg class="icon-sun" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="4"></line>
+            <line x1="12" y1="20" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="6.34" y2="6.34"></line>
+            <line x1="17.66" y1="17.66" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="4" y2="12"></line>
+            <line x1="20" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="6.34" y2="17.66"></line>
+            <line x1="17.66" y1="6.34" x2="19.78" y2="4.22"></line>
+          </svg>
+
+          <!-- Moon Icon -->
+          <svg class="icon-moon" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 0 1 11.21 3 
+                     7 7 0 1 0 21 12.79z" />
+          </svg>
+        </div>
+      </div>
+    </button>
+
+  </div>
+</nav>
+<!-- NAVBAR ------------------------------------------------------------------------------------------------------------------>
+
+  
+<!-- GLOBAL TAKEAWAY BAR -->
+  <div class="takeaway-bar" id="globalTakeawayBar">
+    <span>Change take-away view:</span>
+    <button class="takeaway-btn active" data-type="simple">Simple</button>
+    <button class="takeaway-btn" data-type="complex">Complex</button>
+    <button class="takeaway-btn" data-type="full">Full</button>
+  </div>
+
+
+
+  <main class="page-wrapper">
+
+  <!-- FILTERS -->
+  <div class="filter-panel">
+    <input type="text" id="keywordInput" placeholder="Filter by keyword..." />
+    <select id="sortSelect">
+      <option value="year">Sort by Year</option>
+      <option value="citations">Sort by Citations</option>
+    </select>
+    <button class="clear-btn" id="clearBtn">Clear Filters</button>
+  </div>
+
+  <div class="filters-container" id="categoryBar"></div>
+
+  <!-- CARDS -->
+
+  <div id="cardsContainer"></div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 Daan Di Scala</p>
+    <a href="privacy.html">Privacy Statement</a>
+    <div class="content-wrapper">
+    <div class="turtle">
+       <img src="images/Festina.png" alt="Turtle" class="turtle-img">
+    </div></div>
+  </footer>
+
+  </body>
+
+  <script>
+    const publications = [
+      {
+        title: "Deep Learning in Medicine",
+        authors: ["J. Smith", "A. Doe"],
+        simple: "AI helps detect diseases efficiently.",
+        complex: "AI models can process vast medical data to support diagnostics and treatment planning.",
+        full: "We explore deep learning applications in modern healthcare. Our work examines neural architectures for diagnostic imaging and patient record analysis.",
+        year: 2023,
+        citations: 155,
+        keywords: ["AI", "Healthcare", "Deep Learning"],
+        link: "files/deep_learning_in_medicine.pdf",
+        image: "images/paper1.png"
+      },
+      {
+        title: "Quantum Computing Advances",
+        authors: ["R. Wang", "M. Patel"],
+        simple: "Quantum computers solve problems classical ones can't.",
+        complex: "Quantum algorithms provide speedups for certain classes of problems compared to classical counterparts.",
+        full: "This paper investigates the use of quantum algorithms and the scaling of qubit fidelity in next-generation hardware.",
+        year: 2024,
+        citations: 210,
+        keywords: ["Quantum", "Computing", "Algorithms"],
+        link: "files/quantum_computing_advances.pdf",
+        image: "images/paper2.jpg"
+      },
+      {
+        title: "Ethics in AI Systems",
+        authors: ["L. Chen"],
+        simple: "AI systems must respect fairness and accountability.",
+        complex: "Ethical design in AI requires careful consideration of bias, transparency, and governance.",
+        full: "A survey on ethical concerns in artificial intelligence, including fairness, explainability, and societal implications.",
+        year: 2022,
+        citations: 98,
+        keywords: ["AI", "Ethics", "Governance"],
+        link: "files/ethics_in_ai.pdf",
+        image: "images/paper3.jpg"
+      },
+      {
+        title: "Climate Modeling with HPC",
+        authors: ["K. Müller", "J. Smith"],
+        simple: "Supercomputers enhance weather prediction models.",
+        complex: "High-performance computing allows larger-scale simulations improving climate forecasting accuracy.",
+        full: "Using high-performance computing to improve climate prediction and understanding of atmospheric processes.",
+        year: 2021,
+        citations: 130,
+        keywords: ["HPC", "Climate", "Simulation"],
+        link: "files/climate_modeling_hpc.pdf",
+        image: "images/paper1.png"
+      }
+    ];
+
+    const keywordInput = document.getElementById("keywordInput");
+    const categoryBar = document.getElementById("categoryBar");
+    const clearBtn = document.getElementById("clearBtn");
+    const sortSelect = document.getElementById("sortSelect");
+    const cardsContainer = document.getElementById("cardsContainer");
+    const takeawayButtons = document.querySelectorAll("#globalTakeawayBar .takeaway-btn");
+    const takeawayBar = document.getElementById("globalTakeawayBar");
+
+    const allKeywords = [...new Set(publications.flatMap(p => p.keywords))].sort();
+    const selectedKeywords = [];
+    let globalTakeaway = "simple";
+    let currentSort = "year";
+
+    // Gentle pulse animation trigger
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        takeawayBar.classList.add("pulse");
+        setTimeout(() => takeawayBar.classList.remove("pulse"), 2500);
+      }, 3000);
+    });
+
+      function applyURLParameters() {
+        const params = new URLSearchParams(window.location.search);
+
+        // Option A: ?filter=apple
+        if (params.has("filter")) {
+          const keyword = params.get("filter");
+          if (allKeywords.includes(keyword)) {
+            selectedKeywords.push(keyword);
+          }
+        }
+
+        // Option B: ?id=banana  → fills search bar
+        if (params.has("id")) {
+          const term = params.get("id");
+          keywordInput.value = term.toLowerCase();
+        }
+      }
+
+    function renderCategoryButtons() {
+      categoryBar.innerHTML = '';
+      const unselected = allKeywords.filter(k => !selectedKeywords.includes(k));
+      const ordered = [...selectedKeywords, ...unselected];
+      ordered.forEach(keyword => {
+        const isActive = selectedKeywords.includes(keyword);
+        const btn = document.createElement("button");
+        btn.className = "category-btn";
+        if (isActive) btn.classList.add("active");
+        btn.textContent = keyword;
+        btn.addEventListener("click", () => {
+          if (isActive) {
+            const idx = selectedKeywords.indexOf(keyword);
+            if (idx > -1) selectedKeywords.splice(idx, 1);
+          } else {
+            selectedKeywords.push(keyword);
+          }
+          renderCategoryButtons();
+          applyFilters();
+        });
+        categoryBar.appendChild(btn);
+      });
+    }
+
+    function applyFilters() {
+      const keyword = keywordInput.value.toLowerCase();
+      let filtered = publications.filter(pub => {
+        const matchesKeywords =
+          selectedKeywords.length === 0 ||
+          pub.keywords.some(k => selectedKeywords.includes(k));
+        const matchesSearch =
+          pub.title.toLowerCase().includes(keyword) ||
+          pub.authors.join(", ").toLowerCase().includes(keyword) ||
+          pub.simple.toLowerCase().includes(keyword) ||
+          pub.complex.toLowerCase().includes(keyword) ||
+          pub.full.toLowerCase().includes(keyword);
+        return matchesKeywords && matchesSearch;
+      });
+
+      filtered.sort((a, b) => {
+        if (currentSort === "year") return b.year - a.year;
+        else return b.citations - a.citations;
+      });
+
+      renderCards(filtered);
+    }
+
+    function renderAuthors(authors) {
+      return authors.map(a =>
+        a === "J. Smith" ? `<span class="author-smith">${a}</span>` : `<span>${a}</span>`
+      ).join(", ");
+    }
+
+    function renderCards(data) {
+      cardsContainer.innerHTML = '';
+      if (data.length === 0) {
+        cardsContainer.innerHTML = '<p style="text-align:center;">No matching publications found.</p>';
+        return;
+      }
+
+      data.forEach(pub => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <img src="${pub.image}" alt="${pub.title}">
+          <div class="card-content">
+            <h3>${pub.title} (${pub.year})</h3>
+            <p class="authors">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12Zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8V22h19.2v-2.8c0-3.2-6.4-4.8-9.6-4.8Z"/>
+              </svg>
+              ${renderAuthors(pub.authors)}
+            </p><p class="keywords">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M7 14a5 5 0 1 1 4.9-6H22v4h-2v2h-2v2h-2v-4H11.9A5 5 0 0 1 7 14Zm0-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+              </svg>
+              ${pub.keywords.sort().join(", ")}
+            </p>
+
+            <!-- ABSTRACT SUBCARD -->
+            <div class="abstract-subcard">
+              <p class="abstract">${pub[globalTakeaway]}</p>
+            </div>
+
+            <!-- Read Paper directly under subcard -->
+            <a href="${pub.link}" target="_blank" class="link" title="Read paper">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M19 2H8c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h11a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1Zm-1 17H9V4h9v15ZM6 4H5v16h1V4Z"/>
+              </svg> 
+              Read Paper
+            </a>
+          </div>
+
+        `;
+        cardsContainer.appendChild(card);
+      });
+    }
+
+    takeawayButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        takeawayButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        globalTakeaway = btn.dataset.type;
+        applyFilters();
+      });
+    });
+
+    sortSelect.addEventListener("change", e => {
+      currentSort = e.target.value;
+      applyFilters();
+    });
+
+    clearBtn.addEventListener("click", () => {
+      selectedKeywords.length = 0;
+      keywordInput.value = '';
+      renderCategoryButtons();
+      applyFilters();
+    });
+
+    keywordInput.addEventListener("input", applyFilters);
+
+    // Initial render
+    renderCategoryButtons();
+    applyURLParameters();  
+    renderCategoryButtons(); 
+    applyFilters();
+  </script>
+
+  <script src="js/darkmode.js"></script>
+</html>
