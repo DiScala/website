@@ -6,6 +6,7 @@
   <title>Daan Di Scala - Portfolio</title>
   <link rel="stylesheet" href="css/vars.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/posters.css">
     <script>
     (function() {
       const savedTheme = localStorage.getItem('theme');
@@ -26,9 +27,9 @@
         <div class="nav-left">
         <a href="index.html"><svg class="icon" viewBox="0 0 24 24"><path d="M3 9.5l9-7 9 7v11.5a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1V9.5z" /></svg></a>
         <a href="projects.html">Projects</a>
-        <a href="research.html">Research</a>
+        <a href="posters.html" class="active">Posters</a>
         <a href="publications.html">Publications</a>
-        <a href="contact.html" class="active"><svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4V4zm8 7L4 6m16 0l-8 5" /></svg>Contact</a>
+        <a href="contact.html"><svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4V4zm8 7L4 6m16 0l-8 5" /></svg>Contact</a>
         </div>
 
 
@@ -64,16 +65,83 @@
 
   <main class="page-wrapper">
 
-    <!-- LONG CONTENT EXAMPLE -->
+    <!-- BODY -->
+
     <section class="content-long">
-      <h2>Contact Me</h2>
+      <h2>Poster Gallery</h2>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel
-        pretium nulla. Vestibulum tristique elit sit amet leo egestas, non
-        placerat nisi bibendum.
+        An art-gallery-style exhibition of scientific research.
+        Hover over highlighted regions to explore deeper insights.
       </p>
     </section>
     
+
+<!-- Poster 1 -->
+<section class="poster-row">
+  <div class="poster">
+    <img src="https://via.placeholder.com/600x800?text=Scientific+Poster+01" alt="Poster 1">
+
+    <!-- Hotspots -->
+    <div class="hotspot"
+         style="top: 20%; left: 30%; width: 40px; height: 40px;"
+         data-info="Key experimental setup showing the neural response pipeline.">
+    </div>
+
+    <div class="hotspot"
+         style="top: 60%; left: 55%; width: 40px; height: 40px;"
+         data-info="Significant result: 42% improvement over baseline.">
+    </div>
+  </div>
+
+  <div class="info-card">
+    <h2>Neural Dynamics in Visual Processing</h2>
+    <div class="authors">A. Smith · J. Lee · R. Patel</div>
+    <p>
+      This study investigates how layered neural representations evolve
+      during complex visual tasks. Using fMRI and computational modeling,
+      we identify emergent structures that correlate with perception accuracy.
+    </p>
+
+    <div class="tags">
+      <span class="tag">Neuroscience</span>
+      <span class="tag">Machine Learning</span>
+      <span class="tag">fMRI</span>
+    </div>
+  </div>
+</section>
+
+<!-- Poster 2 (Reversed) -->
+<section class="poster-row reverse">
+  <div class="poster">
+    <img src="https://via.placeholder.com/600x800?text=Scientific+Poster+02" alt="Poster 2">
+
+    <div class="hotspot"
+         style="top: 35%; left: 40%; width: 45px; height: 45px;"
+         data-info="Climate model divergence observed under extreme forcing scenarios.">
+    </div>
+  </div>
+
+  <div class="info-card">
+    <h2>Long-Term Climate Model Stability</h2>
+    <div class="authors">L. Hernandez · M. Okafor</div>
+    <p>
+      We compare multiple global climate models under high-variance boundary
+      conditions. Results reveal structural instabilities that emerge beyond
+      2100 projections.
+    </p>
+
+    <div class="tags">
+      <span class="tag">Climate Science</span>
+      <span class="tag">Modeling</span>
+      <span class="tag">Sustainability</span>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- FOOTER ------------------------------------------------------------------------------------------------------------------>
+
   </main>
 
   <footer class="footer">
