@@ -33,7 +33,7 @@ html, body {
   position: sticky;
   top: 0;
   width: 100%;
-  background: var(--bg-dark);
+  background: var(--border-muted);/*var(--bg-dark);*/
   padding: 0.6rem 0;
   border-bottom: 1px solid var(--border);
   z-index: 1000;
@@ -241,6 +241,93 @@ html, body {
   font-weight: 600;
   text-decoration: none;
 }
+
+
+/* PCARDS */
+
+.pgrid {
+  position: relative;
+  width: var(--max-width-40px);
+  height: 600px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 40px;
+}
+
+.pcard {
+  background:var(--bg-light);
+  border-radius: 24px;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.pcard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.18);
+}
+
+.pcard-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.pcard-icon {
+  font-size: 48px;
+  color: #1f2a44;
+  min-width: 56px;
+  text-align: center;
+}
+
+.pcard-text h3 {
+  margin: 0 0 6px;
+  font-size: 24px;
+  letter-spacing: 0.04em;
+}
+
+.pcard-text p {
+  margin: 0;
+  font-size: 15px;
+  color:var(--secondary);
+  max-width: 260px;
+}
+
+.pcard-divider {
+  width: 2px;
+  height: 70px;
+  background: #ddd;
+  margin: 0 24px;
+}
+
+/* Center circle */
+.center-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 180px;
+  height: 180px;
+  transform: translate(-50%, -50%);
+  background: var(--bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  /*box-shadow: 0 8px 25px rgba(0,0,0,0.15);*/
+}
+
+.center-circle span {
+  line-height: 1.4;
+}
+
 
 
 

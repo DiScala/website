@@ -53,7 +53,7 @@
   --border: hsl(225 63% 60%);
   --border-muted: hsl(225 95% 72%);
   --primary: hsl(228 60% 37%);
-  --secondary: hsl(15 95% 70%);
+  --secondary: hsl(4 56%, 27%);
   --danger: hsl(6 60% 41%);
   --warning: hsl(52 100% 14%);
   --success: hsl(161 100% 13%);
@@ -68,7 +68,7 @@
   --border: oklch(0.6 0.15 268);
   --border-muted: oklch(0.7 0.15 268);
   --primary: oklch(0.4 0.15 268);
-  --secondary: oklch(0.76 0.14 39);
+  /*--secondary: oklch(0.76 0.14 39);*/
   --danger: oklch(0.5 0.15 30);
   --warning: oklch(0.5 0.15 100);
   --success: oklch(0.5 0.15 160);
