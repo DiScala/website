@@ -99,8 +99,7 @@
 
 
     <div class="bottom-card">
-      This page is under construction and does not yet include all my Publications yet.<br>
-      This page has last been updated on 23-01-2026. For a full overview of papers, see:
+      This page has last been updated on 24-01-2026. <br>For a full overview of papers, see Google Scholar:
       <a href="https://scholar.google.nl/citations?user=ZDXlUhQAAAAJ" class="social-icon" target="_blank">
         <svg viewBox="0 0 640 640">
           <path
@@ -127,6 +126,56 @@
 
 <script>
   const publications = [
+
+  //2025
+    {
+      title: "Bridging the AI Trustworthiness Gap between Functions and Norms",
+      authors: ["D.Di Scala", "S.Lathouwers", "M.Van Bekkum"],
+      simple: "",
+      complex: "",
+      year: 2025,
+      citations: 0,
+      keywords: ["Trustworthy AI", "Ontologies"],
+      link: "https://arxiv.org/pdf/2512.20671",
+      image: "images/papers/trustbridge.png"
+    },
+    {
+      title: "Ontology Learning with LLMs: A Benchmark Study on Axiom Identification",
+      authors: ["R.Bakker", "D.Di Scala", "M.De Boer", "S.Raaijmakers"],
+      simple: "",
+      complex: "",
+      year: 2025,
+      citations: 1,
+      keywords: ["Large Language Models", "Information Extraction", "Ontologies"],
+      link: "https://arxiv.org/pdf/2512.05594",
+      image: "images/papers/axioms.png"
+    },
+    {
+      title: "The effect of preference elicitation methods on the user experience in conversational recommender systems",
+      authors: ["L.Ziegfeld","D.Di Scala", "A.Cremers"],
+      simple: "",
+      complex: "",
+      year: 2025,
+      citations: 5,
+      keywords: ["Recommender Systems", "Large Language Models"],
+      link: "https://www.sciencedirect.com/science/article/pii/S0885230824000792",
+      image: "images/papers/elicitation.png"
+    },
+    {
+      title: "“I Don't Know” - Towards Appropriate Trust with Certainty-Aware Retrieval Augmented Generation",
+      authors: ["D.Di Scala", "M.De Boer", "P.Yolum"],
+      simple: "",
+      complex: "",
+      year: 2025,
+      citations: 0,
+      keywords: ["Trustworthy AI", "Large Language Models", "Retrieval Augmented Generation"],
+      link: "https://www.sciencedirect.com/science/article/pii/S0885230824000792",
+      image: "images/papers/certa.png"
+    },
+
+
+
+  //2024
     {
       title: "Ontology learning from text: an analysis on LLM performance",
       authors: ["R.Bakker", "D.Di Scala", "M.De Boer"],
@@ -136,7 +185,16 @@
       citations: 19,
       keywords: ["Large Language Models", "Information Extraction", "Ontologies"],
       link: "https://ceur-ws.org/Vol-3874/paper5.pdf",
-      image: "images/papers/ontologylearning.png"
+    },
+    {
+      title: "From text to knowledge graph: Comparing relation extraction methods in a practical context",
+      authors: ["R.Bakker", "D.Di Scala"],
+      simple: "",
+      complex: "",
+      year: 2024,
+      citations: 8,
+      keywords: ["Large Language Models", "Information Extraction", "Knowledge Graphs"],
+      link: "https://ceur-ws.org/Vol-3749/genesy-04.pdf",
     },
     {
       title: "The Effect of Semantic Knowledge Graph Richness on Embedding Based Recommender Systems",
@@ -147,7 +205,33 @@
       citations: 0,
       keywords: ["Recommender Systems", "Knowledge Graphs", "Ontologies"],
       link: "https://ceur-ws.org/Vol-3817/long1.pdf",
+    },
+
+    //2023
+    
+    {
+      title: "PACCART: Reinforcing trust in multiuser privacy agreement systems",
+      authors: ["D.Di Scala", "P.Yolum"],
+      simple: "",
+      complex: "",
+      year: 2023,
+      citations: 7,
+      keywords: ["Assistive AI", "Privacy"],
+      link: "https://arxiv.org/pdf/2302.13650",
+      image: "images/papers/paccart.png"
+    },
+    // 2020
+        {
+      title: "How to Solve a Sudoku - A logical analysis and algorithmic implementation of strategically Solving Sudoku puzzles",
+      authors: ["D.Di Scala"],
+      simple: "Sudokus can be automatically solved in a logical, yet human-like way",
+      complex: "",
+      year: 2020,
+      citations: 0,
+      keywords: ["Logic", "Assistive AI", "Symbolic AI"],
+      link: "https://studenttheses.uu.nl/bitstream/handle/20.500.12932/35782/Thesis%20Daan%20Di%20Scala%205937922.pdf?sequence=1f",
     }
+
   ];
 
   const keywordInput = document.getElementById("keywordInput");
@@ -224,8 +308,7 @@
         pub.title.toLowerCase().includes(keyword) ||
         pub.authors.join(", ").toLowerCase().includes(keyword) ||
         pub.simple.toLowerCase().includes(keyword) ||
-        pub.complex.toLowerCase().includes(keyword) ||
-        pub.full.toLowerCase().includes(keyword);
+        pub.complex.toLowerCase().includes(keyword);
       return matchesKeywords && matchesSearch;
     });
 
