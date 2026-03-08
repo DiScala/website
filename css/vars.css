@@ -1,42 +1,4 @@
 /* ====== Color Palette (defaults) ====== */
-  /*:root {
-  --color-primary: #97bfff;     
-  --color-secondary: #b9d6ff;   
-  --color-accent: #6a8cc7;      
-  --color-dark: #1e2a3a;
-  --color-text: #2d2d2d;
-  --color-bg: #e1eeff;
-
-  --max-width: 900px;
-  --radius-lg: 12px;
-  --radius-sm: 6px;
-}
-
-/* Dark mode variables when .dark-mode is present on <html> */
-  /*.dark-mode {
-  --color-primary: #111620;
-  --color-secondary: #1f2a3a;
-  --color-accent: #6198ff;
-  --color-dark: #f5f7fb;
-  --color-text: #e6eefc;
-  --color-bg: #0f1621;
-}
-
-
-
-:root {
-  --color-primary: hsl(229, 50%, 90%);
-  --color-secondary: hsl(229, 50%, 10%);
-  --color-tertiary: hsl(289, 80%, 20%);
-  --color-accent: hsl(169, 80%, 20%);
-}
-.dark {
-  --color-primary: hsl(229, 50%, 10%);
-  --color-secondary: hsl(229, 50%, 90%);
-  --color-tertiary: hsl(289, 80%, 80%);
-  --color-accent: hsl(169, 80%, 80%);
-}*/
-
 
 :root {
   --max-width: 900px;
@@ -64,31 +26,18 @@
   --bg-dark: oklch(0.92 0.075 268); 
   --bg: oklch(0.96 0.075 268);
   --bg-light: oklch(1 0.075 268);
-
-
-  /*--bg-dark: oklch(0.92 0.075 268); 
-  --bg: oklch(0.96 0.075 268);
-  --bg-light: oklch(1 0.075 268);
-  --bg-dark: oklch(42.98% 0.143 263.89);
-  --bg: oklch(67.96% 0.111 249.40);
-  --bg-light: oklch(75.35% 0.055 231.21);*/
-
   --text: oklch(0.15 0.15 268);
   --text-muted: oklch(0.4 0.15 268);
   --highlight: oklch(1 0.15 268);
   --border: oklch(0.6 0.15 268);
   --border-muted: oklch(0.7 0.15 268);
   --primary: oklch(0.4 0.15 268);
-  --secondary:oklch(53.43% 0.151 23.27);/*oklch(65.88% 0.2299 34.19);*/
+  --secondary:oklch(53.43% 0.151 23.27);
   --secondary-light: oklch(67.62% 0.137 25.14);
   --danger: oklch(0.5 0.15 30);
   --warning: oklch(0.5 0.15 100);
   --success: oklch(0.5 0.15 160);
   --info: oklch(0.5 0.15 260); 
-
-
-
-
 
 }
 

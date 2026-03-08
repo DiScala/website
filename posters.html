@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Daan Di Scala - Posters</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="css/vars.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -39,6 +40,13 @@
           </svg>Contact</a>
       </div>
 
+      
+    <button class="hamburger" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+    </button>
+
 
       <!-- Theme Toggle Switch -->
       <button class="theme-toggle" aria-label="Toggle Dark Mode">
@@ -72,27 +80,6 @@
 
   <main class="page-wrapper">
 
-    <!-- BODY 
-
-    <section class="content-long">
-      <h2>Poster Gallery</h2>
-      <p>
-        An art-gallery-style exhibition of scientific research.
-        Hover over highlighted regions to explore deeper insights.
-      </p>
-    </section>-->
-
-    <!-- Hotspots 
-    <div class="hotspot"
-         style="top: 20%; left: 30%; width: 40px; height: 40px;"
-         data-info="Key experimental setup showing the neural response pipeline.">
-    </div>
-
-    <div class="hotspot"
-         style="top: 60%; left: 55%; width: 40px; height: 40px;"
-         data-info="Significant result: 42% improvement over baseline.">
-    </div>
-    -->
     <section class="zigzag">
 
       <div class="card" id = "farmbook2025">
@@ -105,9 +92,6 @@
 
         <div class="info-card">
           <span class="conference-tag">Presented at <b>CLIN 2025</b></span>
-          <!-- <a href="https://clin35.ccl.kuleuven.be/" target="_blank">
-            <span class="conference-tag">Presented at <b>CLIN 2025</b></span>
-          </a> -->
           <div class="authors"><b>D.Di Scala</b>, D.Vos, EU-FarmBook TNO Team</div>
           <p>
             <b>Take-away:</b> We study how knowledge-driven RAG can improve trustworthiness of agricultural AI advice. Part of the <a href="projects.html">EU-FarmBook project</a>.
@@ -137,9 +121,6 @@
 
         <div class="info-card">
           <span class="conference-tag">Presented at <b>CLIN 2025</b></span>
-          <!-- <a href="https://clin35.ccl.kuleuven.be/" target="_blank">
-            <span class="conference-tag">Presented at <b>CLIN 2025</b></span>
-          </a> -->
           <div class="authors"><b>D.Di Scala</b>, R.Bakker, R.Van Drie, M.De Boer</div>
           <p>
             <b>Take-away:</b> We study how knowledge-driven RAG can improve trustworthiness of legal AI advice.
@@ -171,9 +152,6 @@
 
         <div class="info-card">
 <span class="conference-tag">Presented at <b>VALE@ECAI 2025</b></span>
-          <!-- <a href="https://vale2025.iiia.csic.es/" target="_blank">
-            <span class="conference-tag">Presented at <b>VALE@ECAI 2025</b></span>
-          </a> -->
           <div class="authors"><b>D.Di Scala</b>, M.De Boer, P.Yolum</div>
           <p>
             <b>Take-away:</b> We introduce an uncertainty-driven RAG (CERTA) and show hwo it answers more approprately
@@ -204,10 +182,6 @@
         </div>
 
          <div class="info-card">
-          <!-- a href="https://sites.google.com/view/trust-ai/"> -->
-
-
-          <!-- <a href="https://sites.google.com/view/trust-ai/" target="_blank"> -->
             <span class="conference-tag">
 
               Presented at <b>TRUST-AI@ECAI2025</b>
@@ -242,9 +216,6 @@
 
         <div class="info-card">
                     <span class="conference-tag">Presented at <b>AAMAS 2023</b></span>
-          <!-- <a href="https://aamas2023.soton.ac.uk/" target="_blank"> 
-          <span class="conference-tag">Presented at <b>AAMAS 2023</b></span>
-          </a> -->
           <div class="authors"><b>D.Di Scala</b>, P.Yolum</div>
           <p>
             <b>Take-away:</b> We introduce PACCART, a framework for privacy protection through multi-agent
@@ -276,43 +247,7 @@
       <span class="close-btn">&times;</span>
       <img class="modal-content" id="modalImage" alt="Enlarged poster">
     </div>
-    <!--
-
-
-
-<section class="poster-row reverse">
-  <div class="poster">
-    <img class="poster-img" src="images/posters/NE Poster.png" alt="Poster 2">
-
-    <button class="enlarge-btn" aria-label="Enlarge poster">
-      ⤢
-    </button>
-
-    <div class="hotspot"
-         style="top: 35%; left: 40%; width: 45px; height: 45px;"
-         data-info="Climate model divergence observed under extreme forcing scenarios.">
-    </div>
-  </div>
-
-  <div class="info-card">
-    <h2>Long-Term Climate Model Stability</h2>
-    <div class="authors">L. Hernandez · M. Okafor</div>
-    <p>
-      We compare multiple global climate models under high-variance boundary
-      conditions. Results reveal structural instabilities that emerge beyond
-      2100 projections.
-    </p>
-
-    <div class="tags">
-      <span class="tag">Climate Science</span>
-      <span class="tag">Modeling</span>
-      <span class="tag">Sustainability</span>
-    </div>
-  </div>
-</section>
--->
-
-
+   
 
     <!-- FOOTER ------------------------------------------------------------------------------------------------------------------>
 
@@ -431,7 +366,7 @@
   });
 </script>
 
-
 <script src="js/darkmode.js"></script>
+<script src="js/hamburger.js"></script>
 
 </html>

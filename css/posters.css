@@ -213,17 +213,9 @@
     border-radius: 999px;   
       display: table;
     margin-left:auto;
-       /* cursor: pointer;   
-      transition: transform 0.3s ease;  */
+
   }
 
-  /* .conference-tag:hover{
-   
-     transform: scale(1.1);
-    box-shadow: 0 16px 40px rgba(0,0,0,0.18); 
-
-
-  }  */
 
   .info-card a {
   text-decoration: none;
@@ -322,3 +314,43 @@ transform: translateY(-15%);
       gap: 2rem;
     }
   }
+
+  /* ================= MOBILE POSTER LAYOUT ================= */
+
+@media (max-width: 900px) {
+
+  .zigzag {
+    grid-template-columns: 1fr; /* switch to single column */
+    gap: 40px;
+  }
+
+  /* reset manual column placement */
+  .card:nth-child(odd),
+  .card:nth-child(even) {
+    grid-column: auto;
+  }
+
+  /* remove the zigzag offset */
+  .card:nth-child(even) {
+    transform: none;
+  }
+
+  /* make poster a bit smaller for phones */
+  .poster {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* keep info card aligned */
+  .info-card {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .poster {
+    aspect-ratio: 2 / 3;
+  }
+}

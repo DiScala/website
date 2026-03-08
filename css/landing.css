@@ -56,15 +56,6 @@
 }
 
 
-/*
-.lc-divider {
-  height: 3px;
-  width: 60px;
-  background: #2563eb;
-  margin: 10px 0 18px;
-  border-radius: 10px;
-}*/
-
 .lc-main p {
   margin: 0;
   font-size: 15px;
@@ -86,44 +77,6 @@
 }
 
 
-
-/* RESPONSIVE ------------------------------------------------- */
-
-@media (max-width: 900px) {
-  .landing-card {
-    grid-template-columns: 140px 1fr;
-  }
-
-  .lc-socials {
-    grid-column: 1 / -1;
-    justify-content: flex-start;
-  }
-}
-
-@media (max-width: 640px) {
-  .landing-card {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .lc-profile {
-    display: flex;
-    justify-content: center;
-  }
-
-  .lc-boxes {
-    grid-template-columns: 1fr;
-  }
-
-  .lc-socials {
-    justify-content: center;
-  }
-
-  .lc-divider {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
 
 
 /* ----- SOCIAL ICONS ----- */
@@ -297,4 +250,122 @@ fill: var(--secondary-light);
 
 .center-circle span {
   line-height: 1.4;
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+
+  .landing-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 24px;
+  }
+
+  .lc-divider {
+    display: none;
+  }
+
+  .lc-top {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .lc-profile img {
+    width: 110px;
+    height: 110px;
+  }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+  .landing-card {
+    padding: 20px;
+  }
+
+  .lc-name {
+    font-size: 24px;
+  }
+
+  .lc-subtitle {
+    font-size: 18px;
+  }
+
+  .lc-main p {
+    font-size: 14px;
+  }
+
+  .social-row {
+    justify-content: center;
+  }
+
+}
+
+
+/* ================= PCARD GRID MOBILE ================= */
+
+@media (max-width: 900px) {
+
+  .pgrid {
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .pcard {
+    padding: 24px;
+  }
+
+  .pcard-content {
+    gap: 14px;
+  }
+
+  .pcard-icon svg {
+    width: 52px;
+  }
+
+  .pcard-text h3 {
+    font-size: 20px;
+  }
+
+  .pcard-text p {
+    font-size: 14px;
+    max-width: none;
+  }
+
+  .pcard-divider {
+    display: none;
+  }
+
+  .center-circle {
+    display: none;
+  }
+
+}
+
+
+/* ================= VERY SMALL PHONES ================= */
+
+@media (max-width: 420px) {
+
+  .pcard {
+    padding: 20px;
+  }
+
+  .pcard-icon svg {
+    width: 46px;
+  }
+
+  .pcard-text h3 {
+    font-size: 18px;
+  }
+
 }
