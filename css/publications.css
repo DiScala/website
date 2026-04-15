@@ -195,45 +195,74 @@ select {
   height: auto;
 }
 
-.read-paper {
+.pub-image {
+  position: relative;
+}
+
+/* container for both buttons */
+.paper-actions {
   position: absolute;
   top: 8px;
   right: 8px;
   display: flex;
-  align-items: center;
   gap: 6px;
-  padding: 6px 10px;
-  background: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  text-decoration: none;
-  font-size: 0.85rem;
-  border-radius: 4px;
 }
 
-.read-paper svg,
-.read-paper-no-img svg {
+/* base button style */
+.paper-btn {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+
+  width: 32px; /* icon-only width */
+  height: 32px;
+  padding: 6px;
+
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+/* icon */
+.paper-btn svg {
   width: 16px;
   height: 16px;
   fill: currentColor;
+  flex-shrink: 0;
 }
 
-.read-paper:hover,
-.read-paper-no-img:hover {
+/* hidden text */
+.paper-btn span {
+  opacity: 0;
+  margin-left: 6px;
+  transition: opacity 0.2s ease;
+  font-size: 0.85rem;
+}
+
+/* expand on hover */
+.paper-btn:hover {
+  width: 110px; /* expands */
   background: rgba(0, 0, 0, 0.85);
 }
 
-.read-paper-no-img {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 10px;
-  background: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  text-decoration: none;
-  font-size: 0.85rem;
-  border-radius: 4px;
-  margin-left: auto;
-  margin-bottom: 10px;
+/* reveal text */
+.paper-btn:hover span {
+  opacity: 1;
+}
+
+/* optional: different tint for cite */
+.cite-btn {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.cite-btn:hover {
+  background: rgba(50, 50, 50, 0.9);
 }
 
 .accordion-btn {
@@ -450,6 +479,110 @@ select {
   }
 
 
+  /* MODAL CITATION */
+
+  /* overlay */
+.cite-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.6);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 1000;
+}
+
+/* active state */
+.cite-modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* modal box */
+.cite-modal-content {
+  background: #fff;
+  color: #222;
+  padding: 20px 24px;
+  border-radius: 10px;
+
+  width: 90%;
+  max-width: 600px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  position: relative;
+
+  animation: modalPop 0.2s ease;
+}
+
+@keyframes modalPop {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* close button */
+.cite-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* text citation */
+.cite-text {
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+/* bibtex */
+.cite-bibtex {
+  background: #f5f5f5;
+  padding: 12px;
+  border-radius: 6px;
+
+  font-size: 0.8rem;
+  overflow-x: auto;
+}
+
+
+.cite-actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.cite-actions button {
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #eee;
+}
+
+.cite-actions button:hover {
+  background: #ddd;
+}
+
 
 /* === MOBILE === */
 @media (max-width: 700px) {
@@ -480,3 +613,4 @@ select {
     height: 140px;
   }
 }
+

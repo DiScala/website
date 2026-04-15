@@ -127,9 +127,30 @@
     <div id="cardsContainer"></div>
 
 
+        <!-- CITE MODAL -->
+<div id="citeModal" class="cite-modal">
+  <div class="cite-modal-content">
+
+    <button class="cite-close" onclick="closeCiteModal()">×</button>
+
+    <h3>Cite</h3>
+
+    <div id="citeText" class="cite-text"></div>
+
+    <div class="cite-actions">
+      <button onclick="copyText('citeText')">Copy APA</button>
+      <button onclick="copyText('citeBibtex')">Copy BibTeX</button>
+    </div>
+
+    <pre id="citeBibtex" class="cite-bibtex"></pre>
+
+  </div>
+</div>
+
+
     <div class="bottom-card">
       <div class="bottom-card-content">
-      This page has last been updated on 27-03-2026. <br>For a full overview of papers, see Google Scholar:
+      This page has last been updated on 15-04-2026. <br>For a full overview of papers, see Google Scholar:
       <a href="https://scholar.google.nl/citations?user=ZDXlUhQAAAAJ" class="social-icon" target="_blank">
         <svg viewBox="0 0 640 640">
           <path
@@ -157,20 +178,69 @@
 
 <script>
   const publications = [
-    //2026
+        //2026
     {
-      title: "Let Me Explain - Knowledge-Based Retrieval Augmented Generation for Agricultural Recommendation Explanations",
+      title: "Harvesting Trust Indicators",
+      authors: ["D.Di Scala", "M.De Boer"],
+      simple: "",
+      complex: "",
+      year: 2026,
+      citations: 0,
+      keywords: ["Trustworthy AI", "LLMs", "RAG", "Evaluation"],
+      link: "",
+      citationbib: 
+      `@article{TBD,
+        author = {TBD TBD},
+        title = {TBD},
+        journal = {TBD},
+        year = {2026},
+        volume = {TBD},
+        number = {TBD},
+        pages = {TBD},
+        doi = {TBD}
+      }`
+    },
+        {
+      title: "QuALA-NL: Question & Answer with Legal Attribution in Dutch",
+      authors: ["R.Van Drie", "R.Bakker", "D.Di Scala", "M.De Boer"],
+      simple: "",
+      complex: "",
+      year: 2026,
+      citations: 0,
+      keywords: ["RAG"],
+      link: "",
+      citationbib: 
+      `@article{TBD,
+        author = {TBD TBD},
+        title = {TBD},
+        journal = {TBD},
+        year = {2026},
+        volume = {TBD},
+        number = {TBD},
+        pages = {TBD},
+        doi = {TBD}
+      }`
+    },
+    {
+      title: "Let Me Explain - Knowledge-Based RAG for Agricultural Recommendation Explanations",
       authors: ["D.Di Scala", "M.De Boer"],
       simple: "We improve recommendations by combining LLMs' natural explanations with fine-grained matching based on structured knowledge.",
       complex: "",
       year: 2026,
       citations: 0,
-      keywords: ["Trustworthy AI", "Recommender Systems", "Large Language Models", "Retrieval Augmented Generation"],
+      keywords: ["Trustworthy AI", "Recommender Systems", "LLMs", "RAG"],
       link: "https://link.springer.com/chapter/10.1007/978-3-032-21300-6_8",
+      citationbib: 
+`@inproceedings{di2026let,
+  title={Let Me Explain-Knowledge-Based Retrieval Augmented Generation for Agricultural Recommendation Explanations},
+  author={Di Scala, Daan L and de Boer, Maaike HT},
+  booktitle={European Conference on Information Retrieval},
+  pages={122--138},
+  year={2026},
+  organization={Springer}
+}`
     },
-
-  //2025
-          {
+              {
       title: "Trusting AI is dangerous. Not trusting AI, too.",
       authors: ["F.Bomhof","D.Di Scala"],
       simple: "We discuss three necessary efforts towards trustworthy AI: Laws, Labor, and Literacy.",
@@ -179,18 +249,39 @@
       citations: 0,
       keywords: ["Trustworthy AI", "Blog"],
       link: "https://ai-gedachten.blog/2026/02/01/trusting-ai-is-dangerous-not-trusting-ai-too/",
-      image: "images/papers/turtle.png"
+      image: "images/papers/turtle.png",
+      citationbib: 
+      `@misc{Bomhof_Di Scala_2026, 
+      title={Trusting AI is dangerous. not trusting AI, too.}, 
+      url={https://ai-gedachten.blog/2026/02/01/trusting-ai-is-dangerous-not-trusting-ai-too/}, 
+      author={Bomhof, Freek and Di Scala, Daan}, 
+      year={2026}, 
+      month={Feb}} `
     },
+
+  //2025
+
     {
-      title: "“I Don't Know” - Towards Appropriate Trust with Certainty-Aware Retrieval Augmented Generation",
+      title: "“I Don't Know” - Towards Appropriate Trust with Certainty-Aware RAG",
       authors: ["D.Di Scala", "M.De Boer", "P.Yolum"],
       simple: "",
       complex: "",
       year: 2025,
       citations: 0,
-      keywords: ["Trustworthy AI", "Large Language Models", "Retrieval Augmented Generation"],
+      keywords: ["Trustworthy AI", "LLMs", "RAG"],
       link: "https://www.sciencedirect.com/science/article/pii/S0885230824000792",
-      image: "images/papers/certa.png"
+      image: "images/papers/certa.png",
+      citationbib: 
+      `@article{TBD,
+        author = {TBD TBD},
+        title = {TBD},
+        journal = {TBD},
+        year = {2026},
+        volume = {TBD},
+        number = {TBD},
+        pages = {TBD},
+        doi = {TBD}
+      }`
     },
     {
       title: "Bridging the AI Trustworthiness Gap between Functions and Norms",
@@ -201,7 +292,14 @@
       citations: 0,
       keywords: ["Trustworthy AI", "Ontologies"],
       link: "https://arxiv.org/pdf/2512.20671",
-      image: "images/papers/trustbridge.png"
+      image: "images/papers/trustbridge.png",
+      citationbib: 
+      `@article{di2025bridging,
+  title={Bridging the AI Trustworthiness Gap between Functions and Norms},
+  author={Di Scala, Daan and Lathouwers, Sophie and van Bekkum, Michael},
+  journal={arXiv preprint arXiv:2512.20671},
+  year={2025}
+}`
     },
     {
       title: "Ontology Learning with LLMs: A Benchmark Study on Axiom Identification",
@@ -210,9 +308,16 @@
       complex: "",
       year: 2025,
       citations: 1,
-      keywords: ["Large Language Models", "Information Extraction", "Ontologies"],
+      keywords: ["LLMs", "Information Extraction", "Ontologies"],
       link: "https://arxiv.org/pdf/2512.05594",
-      image: "images/papers/axioms.png"
+      image: "images/papers/axioms.png",
+      citationbib: 
+      `@article{bakker2025ontology,
+  title={Ontology Learning with LLMs: A Benchmark Study on Axiom Identification},
+  author={Bakker, Roos M and Di Scala, Daan L and de Boer, Maaike HT and Raaijmakers, Stephan A},
+  journal={arXiv preprint arXiv:2512.05594},
+  year={2025}
+}`
     },
     {
       title: "The effect of preference elicitation methods on the user experience in conversational recommender systems",
@@ -220,10 +325,20 @@
       simple: "",
       complex: "",
       year: 2025,
-      citations: 8,
-      keywords: ["Recommender Systems", "Large Language Models"],
+      citations: 10,
+      keywords: ["Recommender Systems", "LLMs"],
       link: "https://www.sciencedirect.com/science/article/pii/S0885230824000792",
-      image: "images/papers/elicitation.png"
+      image: "images/papers/elicitation.png",
+      citationbib: 
+      `@article{ziegfeld2025effect,
+  title={The effect of preference elicitation methods on the user experience in conversational recommender systems},
+  author={Ziegfeld, Liv and Di Scala, Daan and Cremers, Anita HM},
+  journal={Computer Speech \& Language},
+  volume={89},
+  pages={101696},
+  year={2025},
+  publisher={Elsevier}
+}`
     },
     
 
@@ -236,9 +351,17 @@
       simple: "LLMs can produce ontologies from texts quite well, especially with our step-by-step approach",
       complex: "",
       year: 2024,
-      citations: 22,
-      keywords: ["Large Language Models", "Information Extraction", "Ontologies"],
+      citations: 23,
+      keywords: ["LLMs", "Information Extraction", "Ontologies"],
       link: "https://ceur-ws.org/Vol-3874/paper5.pdf",
+     citationbib: 
+      `@inproceedings{bakker2024ontology,
+  title={Ontology Learning from Text: an Analysis on LLM Performance.},
+  author={Bakker, Roos M and Di Scala, Daan L and de Boer, Maaike HT},
+  booktitle={NLP4KGC@ SEMANTiCS},
+  pages={70--87},
+  year={2024}
+}` 
     },
     {
       title: "From text to knowledge graph: Comparing relation extraction methods in a practical context",
@@ -247,8 +370,15 @@
       complex: "",
       year: 2024,
       citations: 8,
-      keywords: ["Large Language Models", "Information Extraction", "Knowledge Graphs"],
+      keywords: ["LLMs", "Information Extraction", "Knowledge Graphs"],
       link: "https://ceur-ws.org/Vol-3749/genesy-04.pdf",
+      citationbib: 
+      `@inproceedings{bakker2024text,
+  title={From Text to Knowledge Graph: Comparing Relation Extraction Methods in a Practical Context.},
+  author={Bakker, Roos M and Di Scala, Daan L},
+  booktitle={ESWC Workshops},
+  year={2024}
+}`
     },
     {
       title: "The Effect of Semantic Knowledge Graph Richness on Embedding Based Recommender Systems",
@@ -259,6 +389,14 @@
       citations: 0,
       keywords: ["Recommender Systems", "Knowledge Graphs", "Ontologies"],
       link: "https://ceur-ws.org/Vol-3817/long1.pdf",
+      citationbib: 
+      `@inproceedings{di2024effect,
+  title={The Effect of Semantic Knowledge Graph Richness on Embedding Based Recommender Systems.},
+  author={Di Scala, Daan and Wang, Xu and Brewster, Christopher},
+  booktitle={KaRS@ RecSys},
+  pages={11--20},
+  year={2024}
+}`
     },
 
     //2023
@@ -272,7 +410,16 @@
       citations: 7,
       keywords: ["Assistive AI", "Privacy"],
       link: "https://arxiv.org/pdf/2302.13650",
-      image: "images/papers/paccart.png"
+      image: "images/papers/paccart.png",
+      citationbib: 
+      `@inproceedings{di2023paccart,
+  title={Paccart: Reinforcing trust in multiuser privacy agreement systems},
+  author={Di Scala, Daan and Yolum, Pinar},
+  booktitle={International Workshop on Coordination, Organizations, Institutions, Norms, and Ethics for Governance of Multi-Agent Systems},
+  pages={3--20},
+  year={2023},
+  organization={Springer}
+}`
     },
     // 2020
         {
@@ -284,6 +431,13 @@
       citations: 0,
       keywords: ["Logic", "Assistive AI", "Symbolic AI"],
       link: "https://studenttheses.uu.nl/bitstream/handle/20.500.12932/35782/Thesis%20Daan%20Di%20Scala%205937922.pdf?sequence=1f",
+      citationbib: 
+      `@mastersthesis{di2020solve,
+  title={How to Solve a Sudoku-A logical analysis and algorithmic implementation of strategically Solving Sudoku puzzles},
+  author={Di Scala, Daan Luca},
+  type={{B.S.} thesis},
+  year={2020}
+}`
     }
 
   ];
@@ -395,34 +549,63 @@
       card.innerHTML = ""
 
       if (pub.keywords.includes("Blog") ){
-        link_text = "Read Blog"}
+        link_text = "Blog"}
       else{
-      link_text = "Read Paper"}
+      link_text = "Paper"}
 
       if (pub.image) {
-
         card.innerHTML += `
-        <div class="pub-image">
-            <img src="${pub.image}" alt="${pub.title}">
+       <div class="pub-image">
+          <img src="${pub.image}" alt="${pub.title}">
 
-              <a href="${pub.link}" target="_blank" class="read-paper" title="Read paper">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path d="M19 2H8c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h11a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1Zm-1 17H9V4h9v15ZM6 4H5v16h1V4Z"/>
-                </svg> 
-                ${link_text}
-              </a>
+          <div class="paper-actions">
+            
+            <!-- Cite button -->
+            <button class="paper-btn cite-btn"  onclick="openCiteModal(\`${pub.citationbib}\`)">
+              <svg viewBox="0 0 24 24">
+                <!-- quote / cite icon -->
+                <path d="M7 7h4v4H9v2h2v4H7v-4h2v-2H7V7Zm10 0h-4v4h2v2h-2v4h4v-4h-2v-2h2V7Z"/>
+              </svg>
+              <span>Cite ${link_text}</span>
+            </button>
+
+            <!-- Read button -->
+            <a href="${pub.link}" target="_blank" class="paper-btn read-btn">
+              <svg viewBox="0 0 24 24">
+                <!-- book icon -->
+                <path d="M19 2H8c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h11a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1Zm-1 17H9V4h9v15ZM6 4H5v16h1V4Z"/>
+              </svg>
+              <span>Read ${link_text}</span>
+            </a>
+
           </div>
+        </div>
         `;
 
       }
       else {
         card.innerHTML += `
-            <a href="${pub.link}" target="_blank" class="read-paper-no-img" title="Read paper">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path d="M19 2H8c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h11a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1Zm-1 17H9V4h9v15ZM6 4H5v16h1V4Z"/>
-                </svg> 
-                ${link_text}
-              </a>
+<div class="paper-actions">
+            
+            <!-- Cite button -->
+            <button class="paper-btn cite-btn"  onclick="openCiteModal(\`${pub.citationbib}\`)">
+              <svg viewBox="0 0 24 24">
+                <!-- quote / cite icon -->
+                <path d="M7 7h4v4H9v2h2v4H7v-4h2v-2H7V7Zm10 0h-4v4h2v2h-2v4h4v-4h-2v-2h2V7Z"/>
+              </svg>
+              <span>Cite ${link_text}</span>
+            </button>
+
+            <!-- Read button -->
+            <a href="${pub.link}" target="_blank" class="paper-btn read-btn">
+              <svg viewBox="0 0 24 24">
+                <!-- book icon -->
+                <path d="M19 2H8c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h11a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1Zm-1 17H9V4h9v15ZM6 4H5v16h1V4Z"/>
+              </svg>
+              <span>Read ${link_text}</span>
+            </a>
+
+          </div>
         `;
       }
 
@@ -475,6 +658,8 @@
     });
   }
 
+
+
   /*
   takeawayButtons.forEach(btn => {
     btn.addEventListener("click", () => {
@@ -506,6 +691,104 @@
   applyFilters();
 </script>
 
+<script>
+function openCiteModal(bibtex) {
+  const modal = document.getElementById("citeModal");
+  const bibEl = document.getElementById("citeBibtex");
+  const textEl = document.getElementById("citeText");
+
+  bibEl.textContent = bibtex;
+
+  const apa = parseBibToAPA(bibtex);
+  textEl.textContent = apa;
+
+  // store for copy buttons
+  textEl.dataset.copy = apa;
+  bibEl.dataset.copy = bibtex;
+
+  modal.classList.add("open");
+}
+
+function closeCiteModal() {
+  document.getElementById("citeModal").classList.remove("open");
+}
+
+/* click outside to close */
+document.getElementById("citeModal").addEventListener("click", function (e) {
+  if (e.target === this) closeCiteModal();
+});
+
+/* ESC to close */
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") closeCiteModal();
+});
+
+function parseBibToAPA(bib) {
+  const getField = (field) => {
+    const match = bib.match(new RegExp(field + "\\s*=\\s*[{\"]([^}\"]+)[}\"]", "i"));
+    return match ? match[1] : "";
+  };
+
+  const formatAuthors = (authors) => {
+  if (!authors) return "";
+
+  const list = authors.split(" and ").map(a => a.trim());
+
+  const formatted = list.map((name) => {
+    let first = "";
+    let last = "";
+
+    if (name.includes(",")) {
+      // Format: Last, First
+      const parts = name.split(",");
+      last = parts[0].trim();
+      first = parts[1]?.trim() || "";
+    } else {
+      // Format: First Last
+      const parts = name.split(" ");
+      last = parts.pop();
+      first = parts.join(" ");
+    }
+
+    const initials = first
+      .split(" ")
+      .filter(Boolean)
+      .map(p => p[0].toUpperCase() + ".")
+      .join(" ");
+
+    return `${last}, ${initials}`;
+  });
+
+  // APA joining
+  if (formatted.length === 1) return formatted[0];
+  if (formatted.length === 2) return formatted.join(" & ");
+  
+  return formatted.slice(0, -1).join(", ") + ", & " + formatted.slice(-1);
+};
+
+  const author = formatAuthors(getField("author"));
+  const year = getField("year");
+  const title = getField("title");
+  const journal = getField("journal") || getField("booktitle");
+
+  return `${author} (${year}). ${title}. ${journal}.`;
+  
+}
+
+function copyText(elementId) {
+  const el = document.getElementById(elementId);
+  const text = el.dataset.copy || el.textContent;
+
+  navigator.clipboard.writeText(text);
+
+  // optional feedback
+  const btn = event.target;
+  const original = btn.textContent;
+  btn.textContent = "Copied!";
+  setTimeout(() => (btn.textContent = original), 1200);
+}
+
+</script>
 
 <script>
   document.addEventListener("click", (e) => {
